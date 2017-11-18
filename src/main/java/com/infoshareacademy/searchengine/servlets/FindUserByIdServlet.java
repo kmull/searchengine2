@@ -5,6 +5,7 @@ import com.infoshareacademy.searchengine.dao.UsersRepositoryDao;
 import com.infoshareacademy.searchengine.dao.UsersRepositoryDaoBean;
 import com.infoshareacademy.searchengine.domain.User;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +19,8 @@ import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 @WebServlet("find-user-by-id")
 public class FindUserByIdServlet extends HttpServlet {
 
+    @EJB
+    UsersRepositoryDao usersRepositoryDao;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +28,8 @@ public class FindUserByIdServlet extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
 
-        UsersRepositoryDao usersRepositoryDao = new UsersRepositoryDaoBean();
+//        UsersRepositoryDao usersRepositoryDao = new UsersRepositoryDaoBean();
+
 
         String requestNameParameter = req.getParameter("id");
         if (requestNameParameter == null) {
@@ -33,9 +37,8 @@ public class FindUserByIdServlet extends HttpServlet {
             return;
         }
 
-        ///gggg
-
         int id = Integer.valueOf(requestNameParameter);
+
         User user = usersRepositoryDao.getUserById(id);
 
 
