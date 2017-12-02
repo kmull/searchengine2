@@ -7,7 +7,7 @@ public class User {
     private String surname;
     private String login;
     private int age;
-
+    private Gender gender;
 
     public int getId() {
         return id;
@@ -47,5 +47,13 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Gender getPlec() {
+        return gender;
+    }
+
+    public void setPlec(Gender plec) {
+        this.gender = plec;
     }
 }

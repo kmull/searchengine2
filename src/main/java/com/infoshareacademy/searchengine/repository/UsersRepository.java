@@ -1,6 +1,7 @@
 package com.infoshareacademy.searchengine.repository;
 
 
+        import com.infoshareacademy.searchengine.domain.Gender;
         import com.infoshareacademy.searchengine.domain.User;
 
         import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class UsersRepository {
         user1.setSurname("Kowalski");
         user1.setLogin("janko");
         user1.setAge(21);
+        user1.setPlec(Gender.MAN);
         usersRepository.add(user1);
 
         User user2 = new User();
@@ -31,6 +33,7 @@ public class UsersRepository {
         user2.setSurname("Nowak");
         user2.setLogin("ano");
         user2.setAge(20);
+        user2.setPlec(Gender.MAN);
         usersRepository.add(user2);
 
         User user3 = new User();
@@ -39,6 +42,7 @@ public class UsersRepository {
         user3.setSurname("Michalczuk");
         user3.setLogin("anmi");
         user3.setAge(20);
+        user3.setPlec(Gender.WOMAN);
         usersRepository.add(user3);
     }
 }
